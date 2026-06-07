@@ -2,9 +2,8 @@
 
 body {
   margin: 0;
-  background-color: lightgrey;
+  background-color: #c6cad2;
   font-family: "Oxanium", sans-serif;
-  overflow-y: scroll;
 }
 
 menu {
@@ -18,25 +17,23 @@ a {
   padding: 0.25rem;
 }
 
+a img {
+  padding: 0.25rem;
+}
+
 a:hover {
-  color: #81899c;
+  color: white;
 }
 
 a img:hover {
-  background-color: #81899c;
+  background-color: white;
+  border-radius: 30px;
 }
 
-nav {
-  background-color: #e0001f;
-}
-
-button:hover {
-  background-color: #81899c;
-}
 /* !--top navbar css styles--! */
 
 header {
-  background-color: #e0001f;
+  background-color: #7d7dca;
   height: fit-content 10vh;
 }
 
@@ -59,8 +56,6 @@ nav.banner {
   display: grid;
   grid-template: repeat(1, minmax(5vh, 10vh)) / repeat(5, minmax(auto, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
   max-width: 85vw;
   justify-self: center;
 
@@ -98,29 +93,95 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2.5fr));
   grid-auto-rows: minmax(120px, auto);
-  border: 1px solid black;
+  margin-top: -1rem;
 }
 
+/* !--subsection for the product cards--! */
 .productContainer {
   padding: 0.5rem;
+
+  h1 {
+    background-color: #f3c400;
+    padding: 1rem;
+    margin-bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  p {
+    padding: 0 1em;
+  }
+
+  .productImage {
+    width: 100%;
+  }
 }
 
-.productContainer img {
-  width: 100%;
+/* !--bottom card price banner css styling--! */
+
+.cardPriceBanner {
+  display: grid;
+  grid-template-rows: 1 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
+  background-color: #f3c400;
+  padding: 0.5rem;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+  p {
+    justify-self: left;
+  }
+
+  button {
+    justify-self: right;
+    padding: 0.75rem;
+    border-radius: 100px;
+    border-color: #cca300;
+    background-color: #cca300;
+    border-style: hidden;
+  }
+
+  button:hover {
+    background-color: #f3c400;
+  }
+}
+
+/* !--subsection for sidebar--! */
+
+menu.productCategories {
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+.productCategories li {
+  background-color: #00ada0;
+  margin: 0.35rem;
+  padding: 0.75rem;
+  border-radius: 3px;
+}
+
+menu.productCategories li:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+menu.productCategories li:first-child {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 /* !--bottom footer navbar css styles--! */
 
 footer {
-  background-color: #e0001f;
-  height: 32vh;
+  background-color: #00ada0;
+  min-height: 32vh;
   margin-top: 1rem;
-  position: sticky;
 }
 
 .footerNav {
   display: grid;
-  grid-template: repeat(1, minmax(5vh, 10vh)) / repeat(3, minmax(auto, 1fr));
+  grid-template: repeat(1, minmax(32vh, auto)) / repeat(3, minmax(auto, 1fr));
   gap: 0.55rem;
   max-width: 85vw;
   justify-self: center;
@@ -140,9 +201,24 @@ footer {
     display: none;
   }
 
+  nav.banner {
+    max-width: 100vw;
+    padding-left: 0.5rem;
+  }
+
   menu li button.menuButton {
     display: block;
-    background-color: #e0001f;
+    background-color: #7d7dca;
     border: none;
+    grid-area: 1 / 4 / 2 / 4;
+  }
+
+  menu li button.menuButton:hover {
+    background-color: white;
+    border-radius: 50px;
+  }
+
+  main {
+    max-width: 100vw;
   }
 }
